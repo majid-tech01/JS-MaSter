@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="" id="parent"> 
+        this is a parent
+        <div class="" id="child">
+            this is a child.
+        </div>
+    </div>
+    <button id="btn">this is a button</button>
+    <script>
+
+        const parentDiv = document.getElementById('parent')
+
+const childDiv = document.getElementById('child')
+const Clickbtn = document.getElementById('btn')
+
+function removechild(){
+    parentDiv.removeChild(child)
+}
+
+
+Clickbtn.addEventListener("click",removechild);
+
+// JSON
+
+const arr = [1,2,3,4];
+console.log(arr);
+
+const jsonArr = JSON.stringify(arr);
+console.log(jsonArr);
+
+    </script>
+</body>
+</html>

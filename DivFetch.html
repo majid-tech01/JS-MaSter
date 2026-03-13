@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            background-color: aqua;
+            display: grid;
+             grid-template-columns: 200px 200px;
+        } 
+        h3{
+            background-color: blue;
+        }
+        div1{
+            background-color: rgb(21, 190, 44);
+        }
+    </style>
+</head>
+<body>
+    <button>getData</button>
+    <div id="container"></div>
+    <script>
+       const button = document.querySelector("button")
+        
+       button.addEventListener("click", ()=>{
+        const conatiner = document.querySelector("container")
+        fetch("https://feecq.github.io/api/users.json")
+        .then((data)=>data.json())
+        .then((parsedData)=>{
+            parsedData.forEach((value)=>{
+                const div1 = document.createElement('div')
+                const h = document.createElement('h3')
+                const p1 = document.createElement('p')
+                const p2 = document.createElement('p')
+
+                h.innerText = value.name
+                p1.innerText = value.username
+                p2.innerText = value.email
+
+                div1.appendChild(h)
+                div1.appendChild(p1)
+                div1.appendChild(p2)
+
+                container.appendChild(div1)
+
+            })
+        })
+       })
+    </script>
+</body>
+</html>

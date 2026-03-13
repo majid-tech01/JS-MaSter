@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Document</title>
+    <style>
+        .boxing{
+            height: 50px;
+            width: 50px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+   
+    <h1 id="me">Hello World</h1>
+    <div class="boxing" id="boxing"></div>
+
+    <button class="box" id="box-btn">clik me  </button>
+    <button class="box" id="box-decrese">clik me  </button>
+
+    <script>
+
+        const divbox = document.getElementById("boxing")
+const increase = document.getElementById("box-btn");
+const decrease = document.getElementById("box-decrese");
+
+
+function inc (){
+    divbox.style = "height:150px ; width:150px;";
+}
+
+
+function dec (){
+    divbox.style = "height:30px ; width:30px;";
+}
+
+increase.addEventListener("click",inc);
+decrease.addEventListener("click",dec);
+
+    </script>
+</body>
+</html>

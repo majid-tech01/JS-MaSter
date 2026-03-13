@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="reset">Reset</button>
+
+    <script>
+
+ const currentTimeDiv = document.getElementById("container");
+const startBtn = document.getElementById("start");
+const stopBtn = document.getElementById("stop");
+const resetBtn = document.getElementById("reset");
+
+currentTimeDiv.textContent = 0;
+let intervalId;
+
+startBtn.addEventListener("click",()=>{
+    intervalId = setInterval(()=>{
+        currentTimeDiv.textContent = Number(currentTimeDiv.textContent)+1;
+    },1000);
+
+    stopBtn.addEventListener("click",()=>{
+        clearInterval(intervalId);
+    });
+
+    resetBtn.addEventListener("click",()=>{
+        currentTimeDiv.textContent=0;
+        clearInterval(intervalId);
+    })
+})
+
+    </script>
+</body>

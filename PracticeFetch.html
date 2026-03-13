@@ -1,0 +1,166 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            background-color: black;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <div id="container"></div>
+    <button id="inc">click me</button>
+    <button id="dec">click me</button>
+
+    <script>
+        const div1 = document.getElementById('container')
+        const increase = document.getElementById('inc')
+        const decrease = document.getElementById('dec')
+
+        function inc(){
+            div1.style = "height:150px;width:150px";
+        }
+
+        function dec(){
+            div1.style = "height:30px;width:30px";
+        }
+
+        increase.addEventListener("click",inc)
+        decrease.addEventListener("click",dec)
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">click Me</button>
+    <h1 id="head"></h1>
+    <script>
+        const button =  document.getElementById('btn')
+        const h1 = document.getElementById('head')
+        button.addEventListener("click",()=>{
+            setTimeout(()=>{
+                h1.innerText = "Majid Kaha Ho"
+                h1.style.backgroundColor = "black"
+                h1.style.color="white"
+            },2000);
+        })
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>GetData</button>
+    <table border="1px">
+        <thead>
+            <tr>
+                <th>userId</th>
+                <th>Id</th>
+                <th>title</th>
+                <th>completed</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        const button = document.querySelector('button')
+        button.addEventListener("click",()=>{
+
+        const tbody = document.querySelector('tbody')
+        fetch("https://jsonplaceholder.typicode.com/todos/")
+        .then((data)=>data.json())
+        .then((parsedData)=>{
+            parsedData.forEach((value)=>{
+
+                const tr = document.createElement('tr')
+                const td1 = document.createElement('td')
+                const td2 = document.createElement('td')
+                const td3 = document.createElement('td')
+                const td4 = document.createElement('td')
+
+                td1.innerText = value.userId
+                td2.innerText = value.Id
+                td3.innerText = value.title
+                td4.innerText = value.completed
+
+                if(value.completed){
+                    tr.style.backgroundColor = "green"
+                }
+                else{
+                    tr.style.backgroundColor = "red"
+                }
+
+                tr.appendChild(td1)
+                tr.appendChild(td2)
+                tr.appendChild(td3)
+                tr.appendChild(td4)
+
+                tbody.appendChild(tr)
+
+            })
+        })
+        })
+    </script>
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>GetData</button>
+    <div id="container"></div>
+    <script>
+        const button = document.querySelector('button')
+        const container = document.querySelector('div')
+        fetch("https://feecq.github.io/api/users.json")
+        .then((data)=>data.json())
+        .then((parsedData)=>{
+            parsedData.forEach((value)=>{
+
+                const div1 = document.createElement('container')
+                const h = document.createElement('h3')
+                const p1 = document.createElement('p')
+                const p2 = document.createElement('p')
+
+                h.innerText = value.name
+                p1.innerText = value.username
+                p2.innerText = value.email
+
+                div1.appendChild(h)
+                div1.appendChild(p1)
+                div1.appendChild(p2)
+
+                container.appendChild(div1)
+            })
+        })
+    </script>
+</body>
+</html> -->

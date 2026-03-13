@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer{
+            width:200px;
+            height: 25px;
+            border: black 2px solid;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        #loader{
+            background-color:grey;
+            height: 25px;
+            width: 10%;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="loader"></div>
+    </div>
+    <br>
+    <script>
+
+        const Loader = document.getElementById("loader");
+
+   let Loaderwith = 1;
+
+   function increaseloaderwith(){
+    Loaderwith++;
+    Loader.style.width = Loaderwith + "%";
+    if(Loaderwith <=100){
+    Loader.textContent = Loaderwith + "%";
+    
+    }
+   }
+
+  setInterval(increaseloaderwith, 100);
+
+    </script>
+
+</body>
+</html>

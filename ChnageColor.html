@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #change{
+        /* background-color: red; */
+        height: 200px;
+        width: 200px;
+        border: 2px solid greenyellow;
+        border-radius: 50%;
+    }
+</style>
+<body>
+    <div id="change"></div>
+    <button id="btn">Change Color</button>
+    <script>
+
+        const divbox = document.getElementById("change");
+const changebtn = document.getElementById("btn");
+divbox.style.backgroundColor = "black";
+changebtn.addEventListener("click",()=>{
+    let currentcolor = divbox.style.backgroundColor;
+    if(currentcolor=="black"){
+        divbox.style.backgroundColor = "red";
+    }
+    else if(currentcolor=="red"){
+        divbox.style.backgroundColor = "pink";
+    }
+    else if(currentcolor=="pink"){
+        divbox.style.backgroundColor = "black";
+    }
+})
+    </script>
+</body>
+</html>
